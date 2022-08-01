@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booth Detection</title>
+</head>
+<body>
+    <h1>Booth Detection</h1>
+    <img src="{{ url_for('video_feed') }}" width="65%">
+    <h2 id="new"></h2>
+    <h2 id="returning"></h2>
+    <script>
+        setInterval(function() {
+            fetch("http://localhost:5000/get_details").then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                if(data.new_visitors) {
+                    document.getElementById("new").innerHTML = "No. of unique visitors: " + data.new_visitors;
+                    document.getElementById("returning").innerHTML = "No. of returning visitors: " + data.returning_visitors;
+                }
+            });
+        }, 1000);
+    </script>
+</body>
+</html>
