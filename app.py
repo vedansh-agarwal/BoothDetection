@@ -82,7 +82,7 @@ def get_details():
             config = json.load(f)
         response = jsonify(new_visitors=config["new visitors"], returning_visitors=config["returning visitors"])
     except:
-        response = {}
+        response = jsonify({})
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
