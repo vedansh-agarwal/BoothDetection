@@ -1,1 +1,5 @@
-{"minimum time to count revisit in seconds": 10, "threshold for face recognition": 0.6, "returning visitors": 0, "new visitors": 0}
+{
+    "minimum time to count revisit in seconds": 10, 
+    "threshold for face recognition": 0.6, 
+    "resize factor": 0.375
+}
